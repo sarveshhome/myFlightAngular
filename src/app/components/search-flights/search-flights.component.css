@@ -11,3 +11,5 @@ example-custom-date-class {
   background: orange;
   border-radius: 50%;
 }
+.mat-form-field.mat-focused .mat-form-field-label{ color:#fff;}
+.mat-form-field.mat-focused .mat-form-field-ripple{background-color:#fff;}

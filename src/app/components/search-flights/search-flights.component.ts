@@ -65,7 +65,7 @@ export class SearchFlightsComponent implements OnInit {
     //dest = this.arr; depdate = this.depdat; arrivaldate = this.arrdat;
     //this.router.navigate(['recommendation/'+ source + '/' + dest + '/' + depdate + '/' + arrivaldate]);
     //this.router.navigate(['/recommendation',{id: source , id2: dest}]);
-    this.router.navigate(['recommendation/', source]);
+    this.router.navigate(['results/', source]);
   }
   ngOnInit() {
     /*source*/
