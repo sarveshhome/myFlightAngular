@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RecommendationComponent } from './components/recommendation/recommendation.component';
+import { HomeComponent } from './components/home/home.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 
 const routes: Routes = [
-  { path: 'recommendation/:id', component: RecommendationComponent },
+  { path:'', redirectTo:'/home', pathMatch:'full'},
+  { path: 'home', component: HomeComponent },
+  { path: 'results/:id', component: SearchResultsComponent }
   //{path: '', redirectTo: '/search-flights', pathMatch: 'full'}
 ];
 
