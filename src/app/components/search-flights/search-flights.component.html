@@ -48,32 +48,32 @@
               </div>
               <div class="input-group mt-3">
                 <mat-form-field class="example-full-width">
-                  <input type="text" placeholder="Flight From" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
-                  <mat-autocomplete #auto="matAutocomplete">
+                  <input type="text" placeholder="Flight From" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="autoFrom">
+                  <mat-autocomplete #autoFrom="matAutocomplete">
                     <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                       {{option}}
                     </mat-option>
                   </mat-autocomplete>
                 </mat-form-field>
+
                 <!-- <input type="text" class="form-control" placeholder="Flight From" id="from" name="flight-from">
                 <div class="input-group-append mr-2">
                   <span class="input-group-text"><i class="fa fa-map-marker"></i>
                   </span>
                 </div> -->
-
                 <!-- <input type="text" class="form-control" placeholder="Flight To" id="to" name="flight-to">
                 <div class="input-group-append">
                   <span class="input-group-text"><i class="fa fa-map-marker"></i>
                   </span>
                 </div> -->
                 <mat-form-field class="example-full-width">
-                  <input type="text" placeholder="Flight To" aria-label="Number"  matInput [formControl]="DestinationControl" [matAutocomplete]="auto">
-                  <mat-autocomplete  #auto="matAutocomplete">
+                  <input type="text" placeholder="Flight To" aria-label="Number"  matInput [formControl]="DestinationControl" [matAutocomplete]="autoTo">
+                  <mat-autocomplete  #autoTo="matAutocomplete">
                     <mat-option *ngFor="let Destoption of filteredDestinationOptions | async" [value]="Destoption">
                       {{Destoption}}
                     </mat-option>
                   </mat-autocomplete>
-                </mat-form-field>
+                </mat-form-field> 
 
               </div>
               <div class="input-group mt-3">
