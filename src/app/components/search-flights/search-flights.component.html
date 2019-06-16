@@ -45,88 +45,100 @@
               <label class="form-check-label" for="radio3">
               <input type="radio" class="form-check-input" id="radio3" name="optradio" value="multicity">
               MultiCity</label>
-              </div>
-              <div class="input-group mt-3">
-                <mat-form-field class="example-full-width">
-                  <input type="text" placeholder="Flight From" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="autoFrom">
-                  <mat-autocomplete #autoFrom="matAutocomplete">
-                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                      {{option}}
-                    </mat-option>
-                  </mat-autocomplete>
-                </mat-form-field>
-
-                <!-- <input type="text" class="form-control" placeholder="Flight From" id="from" name="flight-from">
-                <div class="input-group-append mr-2">
-                  <span class="input-group-text"><i class="fa fa-map-marker"></i>
-                  </span>
-                </div> -->
-                <!-- <input type="text" class="form-control" placeholder="Flight To" id="to" name="flight-to">
-                <div class="input-group-append">
-                  <span class="input-group-text"><i class="fa fa-map-marker"></i>
-                  </span>
-                </div> -->
-                <mat-form-field class="example-full-width">
-                  <input type="text" placeholder="Flight To" aria-label="Number"  matInput [formControl]="DestinationControl" [matAutocomplete]="autoTo">
-                  <mat-autocomplete  #autoTo="matAutocomplete">
-                    <mat-option *ngFor="let Destoption of filteredDestinationOptions | async" [value]="Destoption">
-                      {{Destoption}}
-                    </mat-option>
-                  </mat-autocomplete>
-                </mat-form-field> 
-
-              </div>
-              <div class="input-group mt-3">
-                <mat-form-field class="example-full-width">
-                  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                  <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
-                </mat-form-field>
-
-                <mat-form-field color="accent">
-                  <mat-label>Choose a date</mat-label>
-                  <input matInput [matDatepicker]="picker2">
-                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                  <mat-datepicker #picker2 color="primary"></mat-datepicker>
-                </mat-form-field>
-
-              </div>
-
-              <div class="btn-group mt-3 mr-3">
-                  <button type="btn" class="btn btn-primary">Adults</button>
-                  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
-                  </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">1</a>
-                  <a class="dropdown-item" href="#">2</a>
-                  <a class="dropdown-item" href="#">3</a>
-                  <a class="dropdown-item" href="#">4</a>
-                  <a class="dropdown-item" href="#">5</a>
-                  <a class="dropdown-item" href="#">6</a>
-                  <a class="dropdown-item" href="#">7</a>
-                  <a class="dropdown-item" href="#">8</a>
-                  <a class="dropdown-item" href="#">9</a>
-
+            </div>
+            <!-- Source and destination controllers -->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-6">
+                    <div class="input-group mt-3">
+                      <mat-form-field class="example-full-width">
+                        <input type="text" placeholder="Flight From" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="autoFrom">
+                        <mat-autocomplete #autoFrom="matAutocomplete">
+                          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                            {{option}}
+                          </mat-option>
+                        </mat-autocomplete>
+                      </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group mt-3">
+                        <mat-form-field class="example-full-width">
+                            <input type="text" placeholder="Flight To" aria-label="Number"  matInput [formControl]="DestinationControl" [matAutocomplete]="autoTo">
+                            <mat-autocomplete  #autoTo="matAutocomplete">
+                              <mat-option *ngFor="let Destoption of filteredDestinationOptions | async" [value]="Destoption">
+                                {{Destoption}}
+                              </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field> 
+                    </div>
                 </div>
               </div>
-              <div class="btn-group mt-3 mr-3">
-                <select (change)="onSelect($event.target.value)">
-                  <option value="0">All</option>
-                  <option *ngFor="let airline of airlines" value= {{airline.AirlineCode}}>{{airline.AirlineName}}</option>
-                </select>
-              </div>
-              <div class="btn-group mt-3 mr-3">
-                  <select>
-                    <option *ngFor="let cabinclass of cabinclasses" value= {{cabinclass.ClassCode}}>{{cabinclass.ClassName}}</option>
-                  </select>
+            </div><!-- end -->
+            <!-- traveling date -->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-6">
+                    <div class="input-group mt-3">
+                      <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+                      </mat-form-field>
+                    </div>
                 </div>
-              <div class="form-check-inline ml-3 mt-3">
-                  <label class="form-check-label checked-custom">
-                    <input type="checkbox" class="form-check-input" value="">Direct flights only
-                  </label>
+                <div class="col-sm-6">
+                    <div class="input-group mt-3">
+                        <mat-form-field color="accent" class="example-full-width">
+                          <mat-label>Choose a date</mat-label>
+                          <input matInput [matDatepicker]="picker2">
+                          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                          <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
               </div>
-
-              <button type="button" (click)="onSearch('lon')" class="btn btn-danger mt-3"><i class="fa fa-search"></i> Search</button>
+            </div>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-12">
+                    <div class="btn-group mt-3 mr-3">
+                        <button type="btn" class="btn btn-primary">Adults</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                        </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">1</a>
+                        <a class="dropdown-item" href="#">2</a>
+                        <a class="dropdown-item" href="#">3</a>
+                        <a class="dropdown-item" href="#">4</a>
+                        <a class="dropdown-item" href="#">5</a>
+                        <a class="dropdown-item" href="#">6</a>
+                        <a class="dropdown-item" href="#">7</a>
+                        <a class="dropdown-item" href="#">8</a>
+                        <a class="dropdown-item" href="#">9</a>
+      
+                      </div>
+                    </div>
+                    <div class="btn-group mt-3 mr-3">
+                      <select (change)="onSelect($event.target.value)" class="form-control">
+                        <option value="0">All</option>
+                        <option *ngFor="let airline of airlines" value= {{airline.AirlineCode}}>{{airline.AirlineName}}</option>
+                      </select>
+                    </div>
+                    <div class="btn-group mt-3 mr-3">
+                        <select class="form-control">
+                          <option *ngFor="let cabinclass of cabinclasses" value= {{cabinclass.ClassCode}}>{{cabinclass.ClassName}}</option>
+                        </select>
+                      </div>
+                    <div class="form-check-inline ml-3 mt-3">
+                        <label class="form-check-label checked-custom">
+                          <input type="checkbox" class="form-check-input"  value="">Direct flights only
+                        </label>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" (click)="onSearch('lon')" class="btn btn-danger mt-3"><i class="fa fa-search"></i> Search</button>
        </form>
       </div>
     </div>
