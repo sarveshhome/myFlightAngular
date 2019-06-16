@@ -17,9 +17,10 @@ const apifightUrl = environment.apiUrl;// 'http://travelservice.geetainfotech.co
   providedIn: 'root'
 })
 export class SearchService {
+  private _jsonURL = '/assets/skycanner.json';
   public httpOptions;
   constructor(private http: HttpClient) { }
-
+  
   public getOriginOnFlight(sourcestr): Observable<any> {
     if (this.httpOptions !== null) {
       this.setHeaders();
@@ -42,6 +43,24 @@ export class SearchService {
       );
 
   }
+  public getSearchResult()
+  {
+    console.log('getSearchResult');
+    this.getJSON().subscribe(data => {
+      console.log(data);
+      });
+    // if (this.httpOptions !== null) {
+    //   this.setHeaders();
+    // }
+    // return this.http.post('http://localhost:3000/PricedItinerary', this.httpOptions)
+    //   .pipe(
+    //     map(response => response),
+    //     catchError(this.handleError<any>())
+    //   );
+  }
+  public getJSON(): Observable<any> {
+    return this.http.get(this._jsonURL);
+}
   public getAirlines() {
     return [
       new Airline(1, 'EI', 'Aer Lingus'),

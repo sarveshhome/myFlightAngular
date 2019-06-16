@@ -16,6 +16,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import {MatAutocompleteModule, MatButtonModule, MatFormFieldModule, MatInputModule,
         MatRippleModule, MatNativeDateModule} from '@angular/material';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { HomeComponent } from './components/home/home.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     RecommendationComponent,
     MainLinksComponent,
     InternationalSitesComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
