@@ -13,3 +13,19 @@ example-custom-date-class {
 }
 .mat-form-field.mat-focused .mat-form-field-label{ color:#fff;}
 .mat-form-field.mat-focused .mat-form-field-ripple{background-color:#fff;}
+.cdk-text-field-autofill-monitored:not(:-webkit-autofill){
+  color:orange;
+}
+.mat-calendar-body-selected{
+  background-color:orange;
+  color:#fff;
+}
+.mat-calendar-body-today:not(.mat-calendar-body-selected){
+  border-color: #007bff;
+}
+.mat-datepicker-toggle-active{
+  color:#007bff;
+}
+.mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon, .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon{
+  width: 2em !important;
+}
