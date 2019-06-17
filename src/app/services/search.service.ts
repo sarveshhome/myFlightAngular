@@ -45,22 +45,12 @@ export class SearchService {
   }
   public getSearchResult()
   {
-    console.log('getSearchResult');
-    this.getJSON().subscribe(data => {
-      console.log(data);
-      });
-    // if (this.httpOptions !== null) {
-    //   this.setHeaders();
-    // }
-    // return this.http.post('http://localhost:3000/PricedItinerary', this.httpOptions)
-    //   .pipe(
-    //     map(response => response),
-    //     catchError(this.handleError<any>())
-    //   );
+     console.log('getSearchResult');
+     return this.getJSON();
   }
   public getJSON(): Observable<any> {
     return this.http.get(this._jsonURL);
-}
+ }
   public getAirlines() {
     return [
       new Airline(1, 'EI', 'Aer Lingus'),
