@@ -10,8 +10,8 @@ import { tap } from 'rxjs/operators/tap';
 import { Airline } from '../models/airline';
 import { CabinClass } from '../models/cabinclass';
 import { environment } from 'src/environments/environment.prod';
-
-//const apiUrl = `./assets/data/flight-data.json`;
+import 'rxjs/Rx';
+// const apiUrl = `./assets/data/flight-data.json`;
 const apifightUrl = environment.apiUrl;// 'http://travelservice.geetainfotech.com/api';
 @Injectable({
   providedIn: 'root'
@@ -45,22 +45,12 @@ export class SearchService {
   }
   public getSearchResult()
   {
-    console.log('getSearchResult');
-    this.getJSON().subscribe(data => {
-      console.log(data);
-      });
-    // if (this.httpOptions !== null) {
-    //   this.setHeaders();
-    // }
-    // return this.http.post('http://localhost:3000/PricedItinerary', this.httpOptions)
-    //   .pipe(
-    //     map(response => response),
-    //     catchError(this.handleError<any>())
-    //   );
+     console.log('getSearchResult');
+     return this.getJSON();
   }
   public getJSON(): Observable<any> {
     return this.http.get(this._jsonURL);
-}
+  }
   public getAirlines() {
     return [
       new Airline(1, 'EI', 'Aer Lingus'),
