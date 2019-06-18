@@ -48,7 +48,7 @@ export class SearchService {
      console.log('getSearchResult');
      return this.getJSON();
   }
-  public getJSON(): Observable<any> {
+  public getJSON():Observable<any>{
     return this.http.get(this._jsonURL);
  }
   public getAirlines() {

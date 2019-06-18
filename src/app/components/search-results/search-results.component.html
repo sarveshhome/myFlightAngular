@@ -1,10 +1,20 @@
 <div class="container">
-  Result page
- 
+    Result page
 
-  <ul>
-    <li  *ngFor="let result of pageresult">
-    <span class="badge">{{result}}</span>     
-    <li>
-    </ul>`
+
+    <table *ngIf="arrBirds">
+        <!-- ADD HEADERS -->
+        <tr>
+            <th>ID</th>
+            <th>Name of Bird</th>
+            <th>Type of Bird</th>
+        </tr>
+
+        <!-- BIND ARRAY TO TABLE -->
+        <tr *ngFor="let bird of arrBirds">
+            <td>{{bird.ID}}</td>
+            <td>{{bird.Name}}</td>
+            <td>{{bird.Type}}</td>
+        </tr>
+    </table>
 </div>
