@@ -11,14 +11,14 @@ export class SearchResultsComponent implements OnInit {
   pagess :[];
   employee: any;
   constructor(private dataService: SearchService) {
-    this.pageresult = this.dataService.getSearchResult();
-    console.log(this.pageresult);
     // this.employee = Object.keys(this.pageresult).map(key => ({type: key, value: this.pageresult[key]}));
     //  console.log(this.employee );
 
    }
-  ngOnInit() 
-  {
+  ngOnInit() {
+  
+  this.pageresult = this.dataService.getSearchResult();
+  console.log("Search Result:" + this.pageresult);
+  }
 
   }
-}

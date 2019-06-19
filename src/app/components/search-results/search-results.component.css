@@ -1,0 +1,110 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+ body {
+    overflow-x: hidden;
+  }
+  
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+  }
+  
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+  }
+  
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+  
+  #page-content-wrapper {
+    min-width: 100vw;
+  }
+  
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+  
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+  
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+      background-color: rgb(0,0,255,0.0455);
+    }
+  
+    #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+    }
+  }
+.total-results{
+    font-size: 12px;
+}
+.search-result-header{
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0.448rem 1.25rem;
+    border-bottom: 1px solid #c1c1c1;  
+}
+img.flight-logo {
+    width: 32px;
+}
+span.departure {
+    color: orange;
+    font-size: 13px;
+}
+.departure-date{
+    text-align: right!important;
+    float: right;
+    font-size: 13px;
+    color: #c1c1c1;
+}
+.row.departure-head {
+    display: flex;
+    align-items: center;
+}
+span.duration {
+    font-size: 13px;
+    color: #c1c1c1;
+}
+button.btn.btn-success.select-seat {
+    font-size: 13px;
+    padding:0.375rem 0.33rem;
+    background-color: orange;
+    border-color: orange;
+}
+.col-sm-6.flight-det {
+    font-size: 13px;
+}
+.row.three-col {
+    margin-top: 5px;
+}
+span.flight-from-to {
+    font-size: 14px;
+}
+.row.custom-row {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px 0;
+    background-color: #fff;
+    border: 1px solid #c1c1c1;
+}
+.padding-right-35{
+    padding-right:118px;
+}
+span.booking-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+}

@@ -43,8 +43,7 @@ export class SearchService {
       );
 
   }
-  public getSearchResult()
-  {
+  public getSearchResult(){
     console.log('getSearchResult');
     this.getJSON().subscribe(data => {
       console.log(data);
