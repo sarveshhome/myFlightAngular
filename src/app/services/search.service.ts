@@ -43,6 +43,16 @@ export class SearchService {
       );
 
   }
+  public resultPage(): Observable<any>
+  {
+    if (this.httpOptions !== null) {
+      this.setHeaders();
+    }
+    return this.http.get('http://localhost:3000/OTA_AirLowFareSearchRS')
+      .pipe(
+        map(response => response)
+      );
+  }
   public getSearchResult()
   {
      console.log('getSearchResult');
