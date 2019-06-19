@@ -15,7 +15,7 @@ export class SearchResultsComponent implements OnInit {
     this.subscription= this.dataService.resultPage().subscribe(message => {
       console.log('resultpage');
       // if (message) {
-         console.log(message);
+         
          this.pagess = message;
       //   for (const key in message) {
       //     if(message.hasOwnProperty(key)){
@@ -32,7 +32,7 @@ export class SearchResultsComponent implements OnInit {
         arr.push({[key]:message[key]})
         return arr;
       });
-      this.pageresult = arr["PricedItineraries"];
+      this.pageresult = arr;
     });    
     
     // this.employee = Object.keys(this.pageresult).map(key => ({type: key, value: this.pageresult[key]}));    

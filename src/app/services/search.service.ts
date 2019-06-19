@@ -11,6 +11,9 @@ import { Airline } from '../models/airline';
 import { CabinClass } from '../models/cabinclass';
 import { environment } from 'src/environments/environment.prod';
 import 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 // const apiUrl = `./assets/data/flight-data.json`;
 const apifightUrl = environment.apiUrl;// 'http://travelservice.geetainfotech.com/api';
 @Injectable({
@@ -49,9 +52,10 @@ export class SearchService {
       this.setHeaders();
     }
     return this.http.get('http://localhost:3000/OTA_AirLowFareSearchRS')
-      .pipe(
-        map(response => response)
-      );
+    .pipe(
+      map(response => response),
+      catchError(this.handleError<any>())
+    );
   }
   public getSearchResult()
   {
