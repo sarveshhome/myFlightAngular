@@ -12,6 +12,18 @@ export class SearchResultsComponent implements OnInit {
   employee: [];
   subscription: Subscription;
   constructor(private dataService: SearchService) {
+
+    // this.employee = Object.keys(this.pageresult).map(key => ({type: key, value: this.pageresult[key]}));
+    //  console.log(this.employee );
+
+   }
+  ngOnInit() {
+  
+  this.pageresult = this.dataService.getSearchResult();
+  console.log("Search Result:" + this.pageresult);
+  }
+
+
     this.subscription= this.dataService.getSearchResult().subscribe(message => {
       console.log('resultpage');
       if (message) {
@@ -33,6 +45,5 @@ export class SearchResultsComponent implements OnInit {
     // unsubscribe to ensure no memory leaks
     this.subscription.unsubscribe();
   }
-  ngOnInit() {
-  }
+ 
 }

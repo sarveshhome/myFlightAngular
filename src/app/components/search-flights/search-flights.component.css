@@ -28,4 +28,8 @@ example-custom-date-class {
 }
 .mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon, .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon{
   width: 2em !important;
+  outline: none;
+}
+.mat-input-element{
+  caret-color:orange
 }
