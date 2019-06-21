@@ -1,7 +1,6 @@
 <div class="container-fluid">
   <div class="d-flex" id="wrapper">
-     {{pageresult | json}}
-     
+       
       <!-- Sidebar -->
       <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">
@@ -211,6 +210,32 @@
                   </div>
               </div>
             </div>
+
+            <div class="container-fluid">
+              <div class="row custom-row">
+                <div class="col-sm-5 padding-right-35">
+                  <div class="row departure-head">
+                      <div class="col-sm-6">
+                        <span class="departure">DEPARTURE</span>
+                         <div *ngFor="let item of pageresult ">
+                           <div *ngFor="let ODO of item.AirItinerary.OriginDestinationOptions.OriginDestinationOption">
+                              <div>
+                                  {{ODO.FlightSegment.DepartureAirport | json}}
+                              </div>
+                             
+                           </div>
+                                                      
+                        </div>                         
+                      </div>
+                   <div class="col-sm-6">
+                          <span class="departure-date">20 Aug 2019</span>
+                        </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+
           </div>
       </div>
       <!-- /#page-content-wrapper -->

@@ -7,32 +7,23 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./search-results.component.css']
 })
 export class SearchResultsComponent implements OnInit {
-  pageresult: any[]= [];
+  pageresult: [];
   pagess : [];
   employee: [];
   subscription: Subscription;
   constructor(private dataService: SearchService) {
     this.subscription= this.dataService.resultPage().subscribe(message => {
-      console.log('resultpage');
+     // console.log('resultpage');
       // if (message) {
          
-         this.pagess = message;
-      //   for (const key in message) {
-      //     if(message.hasOwnProperty(key)){
-      //       this.pageresult.push(message[key]);
-      //     }
-      //   }        
-      // } else {
-      //   // clear messages when empty message received
-      //   this.pageresult = [];
-      // }
-      //this.pageresult =  Object.keys(message).map(i => message[i]);
+         
       const arr = [];
       Object.keys(message).map(function(key){
         arr.push({[key]:message[key]})
         return arr;
       });
-      this.pageresult = arr;
+      this.pageresult = arr[0].PricedItineraries.PricedItinerary;      
+      console.log(this.pageresult);
     });    
     
     // this.employee = Object.keys(this.pageresult).map(key => ({type: key, value: this.pageresult[key]}));    
