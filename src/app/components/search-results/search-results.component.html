@@ -219,14 +219,15 @@
                         <span class="departure">DEPARTURE</span>
                          <div *ngFor="let item of pageresult ">
                            <div *ngFor="let ODO of item.AirItinerary.OriginDestinationOptions.OriginDestinationOption">
-                              <div>
-                                  {{ODO.FlightSegment.DepartureAirport | json}}
+                              
+                              <div *ngFor="let fs of ODO.FlightSegment">
+                                  {{fs.DepartureAirport.LocationCode }}  - {{fs.ArrivalAirport.LocationCode }}
+                                  <br>
+                                  {{fs.OperatingAirline.Code}}  
                               </div>
+                              
                               <div>
-                                 {{ODO.FlightSegment.ArrivalAirport | json}}
-                              </div>
-                              <div>
-                                {{ODO.FlightSegment.OperatingAirline | json}}                                
+                              
                               </div>
                               
                            </div>
