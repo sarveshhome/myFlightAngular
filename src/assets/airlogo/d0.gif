@@ -1,0 +1,98 @@
+
+
+
+
+
+
+<!-- Error caused of an 404 Error -->
+<head>
+
+<title>404 Error. Document not found </title>
+
+<style type="text/css">
+#wrapper {
+	width: 740px;
+	padding: 0px;
+	margin: 0 0 0 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.clear {
+	clear: both;
+}
+
+#alert {
+	padding: 10px 10px 10px 10px;
+	background-repeat: no-repeat;
+}
+
+#alert h1 {
+	font-size: 22px;
+	font-weight: bold;
+	color: #FF6600;
+}
+
+#alert a {
+	text-decoration: none;
+	color: #990033;
+}
+
+#alert p {
+	padding: 0;
+	margin: 0;
+	font-size: 11px;
+	color: #666666;
+}
+</style>
+
+<!-- include trackers into head -->
+<!-- GoogleAnalyticsPremium  tag -->
+
+	   <script type="text/javascript">
+	
+			var url404 = "/error404/?u=" + document.location.pathname + document.location.search + "&r=" + document.referrer;
+			var _gaq = _gaq || [];
+			_gaq.push(
+			['_setAccount', 'UA-35713752-1'],
+			['_setDomainName', 'opodo.co.uk'], // Subdomain tracking
+			['_setAllowLinker', true] , // Cross domain tracking  
+			['_set', 'page', '/L_en/C_UK' + url404], // Virtual pageview
+			['_trackPageview'] 
+			);		
+			
+			(function() { 
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+			})();
+			
+		</script>
+	
+<!-- / GoogleAnalyticsPremium tag -->
+<!-- close trackers head zone -->
+</head>
+
+<body>
+<div id="wrapper">
+<div id="alert">
+
+<p align="right">
+	<a href="http://www.opodo.co.uk"><img src="/en/opodo/images_rd/logo/logo_opodo.gif" alt="let the journey begin" border="0"></a>
+</p>
+
+<h1>Searching for offers on Opodo.co.uk?</h1>
+<p>
+	Unfortunately, the page you selected is no longer available. For our current offers, please click<BR>
+	<a href="http://www.opodo.co.uk" style="text-decoration: underline; color: rgb(255, 102, 0);" >here</a>
+</p>
+
+<p align="center"><br>
+	<a href="http://www.opodo.co.uk"><img	src="/en/opodo/images/button/homepage_EN.gif" alt="Click the button to return to the Opodo homepage" border="0"></a>
+</p>
+</div>
+</div>
+</body>
