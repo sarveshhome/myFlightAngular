@@ -120,131 +120,55 @@
             </div>
           </div>
         </div>
-        <div class="container-fluid">
-            <div class="row custom-row">
-              <div class="col-sm-5 padding-right-35">
-                <div class="row departure-head">
-                    <div class="col-sm-6">
-                      <span class="departure">DEPARTURE</span>
-                    </div>
-                    <div class="col-sm-6">
-                        <span class="departure-date">20 Aug 2019</span>
-                      </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                      <span class="flight-from-to">Dubai(DXB) - Delhi(DLI)</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                      <span class="duration">20:00 - 19:00 (5hr 40min)</span>
-                    </div>
-                </div>
-                <div class="row three-col">
-                  <div class="col-sm-2">
-                    <img class="flight-logo" src="./assets/images/Jet-Airways-logo.jpg"/>
-                  </div>
-                  <div class="col-sm-6 flight-det">
-                    <span class="flight-for-travel">Jet Airways</span><br>
-                    <div class="weight-stop">
-                        <span class="luggage">9W - 531</span>
-                        <span class="stop-non-stop">Non-Stop</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4 text-right">
-                    <button type="submit" class="btn btn-success select-seat">Select Seat</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-5 padding-right-35">
-                  <div class="row departure-head">
-                      <div class="col-sm-6">
-                        <span class="departure">RETURN</span>
-                      </div>
-                      <div class="col-sm-6">
-                          <span class="departure-date">20 Aug 2019</span>
-                        </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-sm-12">
-                        <span class="flight-from-to">Delhi(DLI) - Dubai(DXB)</span>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-sm-12">
-                        <span class="duration">20:00 - 19:00 (5hr 40min)</span>
-                      </div>
-                  </div>
-                  <div class="row three-col">
-                    <div class="col-sm-2">
-                      <img class="flight-logo" src="./assets/images/Jet-Airways-logo.jpg"/>
-                    </div>
-                    <div class="col-sm-6 flight-det">
-                      <span class="flight-for-travel">Jet Airways</span><br>
-                      <div class="weight-stop">
-                          <span class="luggage">9W - 531</span>
-                          <span class="stop-non-stop">Non-Stop</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4 text-right">
-                      <button type="submit" class="btn btn-success select-seat">Select Seat</button>
-                    </div>
-                  </div>
-              </div>
-              <div class="col-sm-2">
-                  <div class="row departure-head">
-                      <div class="col-sm-6">
-                        <span class="departure">PRICE</span>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-sm-12">
-                        <span class="booking-price">Rs. 54,000</span>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-sm-12">
-                        <span class="duration">Refundable</span>
-                      </div>
-                  </div>
-              </div>
-            </div>
+        
+            
 
-            <div class="container-fluid">
-              <div class="row custom-row">
-                <div class="col-sm-5 padding-right-35">
+            <div class="container-fluid" *ngFor="let item of pageresult">
+              <div class="row custom-row"*ngFor="let ODO of item.AirItinerary.OriginDestinationOptions.OriginDestinationOption" >
+                <div class="col-sm-5 padding-right-35" *ngFor="let fs of ODO.FlightSegment">
+
                   <div class="row departure-head">
                       <div class="col-sm-6">
                         <span class="departure">DEPARTURE</span>
-                         <div *ngFor="let item of pageresult ">
-                           <div *ngFor="let ODO of item.AirItinerary.OriginDestinationOptions.OriginDestinationOption">
-                              
-                              <div *ngFor="let fs of ODO.FlightSegment">
-                                  {{fs.DepartureAirport.LocationCode }}  - {{fs.ArrivalAirport.LocationCode }}
-                                  <br>
-                                  {{fs.OperatingAirline.Code}}  
-                              </div>
-                              
-                              <div>
-                              
-                              </div>
-                              
-                           </div>
-                                                      
-                        </div>                         
                       </div>
-                   <div class="col-sm-6">
-                          <span class="departure-date">20 Aug 2019</span>
+                      <div class="col-sm-6">
+                          <span class="departure-date">{{fs.DepartureDateTime}} - {{fs.ArrivalAirport.LocationCode }}</span>
+                      </div>  
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                          <span class="flight-from-to">{{fs.DepartureAirport.LocationCode }}</span>
                         </div>
-                  </div>
-                  
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                          <span class="duration">20:00 - 19:00 (5hr 40min)</span>
+                        </div>
+                    </div>
+                    <div class="row three-col">
+                        <div class="col-sm-2">
+                          <img class="flight-logo" src="./assets/airlogo/{{fs.OperatingAirline.Code | lowercase}}.gif"/>
+                        </div>
+                        <div class="col-sm-6 flight-det">
+                          <span class="flight-for-travel">{{fs.OperatingAirline.Code}}</span><br>
+                          <div class="weight-stop">
+                              <span class="luggage">{{fs.OperatingAirline.Code}} - {{fs.FlightNumber}} </span>
+                              <span class="stop-non-stop">Non-Stop</span>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                          <button type="submit" class="btn btn-success select-seat">Select Seat</button>
+                        </div>
+                      </div>
+                                  
+                                  <br>
+                                  
+                   
+                   
                 </div>
               </div>
-
-
           </div>
-      </div>
+      
       <!-- /#page-content-wrapper -->
   
     </div>
